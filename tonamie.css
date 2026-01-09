@@ -1,0 +1,127 @@
+h1{color:#0f550f;}
+h2{color:#0f550f;}
+h3{color:#0f550f;}
+h4{color:#0f550f;}
+ul{color:#530c0c;}
+p{color:#530c0c;}
+.EX{color:#088933;}
+mark{color: #e3ffec;
+    background-color: #088933}
+.table{color:#530c0c;}
+
+
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    background: #dcf2bc
+}
+
+.logo{
+    font-size: 24px;
+}
+
+/*ハンバーガーアイコンの設置*/
+
+.drawer_hidden{
+    display: none;
+}
+
+.drawer_open{
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;/*レイヤーをいちばん上にする*/
+    cursor:pointer;
+}
+
+/*ハンバーガーのアイコン*/
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after{
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background:#612e1f;
+    transition: .5s;
+    position: absolute;
+}
+
+/*一番上の棒の位置調整*/
+.drawer_open span:before{
+    bottom:8px;
+}
+
+/*一番下の棒の位置調整*/
+.drawer_open span:after{
+    top: 8px
+}
+
+/*変身バンク*/
+
+#drawer_input:checked ~ .drawer_open span{
+    background: rgba(255, 255, 255,0);
+}
+
+#drawer_input:checked ~ .drawer_open span::before{
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer_input:checked ~ .drawer_open span::after{
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+/*ここまでが変身バンク*/
+
+/*メニューデザイン*/
+.content{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #fffddf;
+    /*メニューを画面外に飛ばす*/ 
+    display: none;
+    z-index: 99;
+    transition: .5s;
+    list-style: none;
+}
+
+/*メニューくろてん消す*/
+.nakami{
+    padding-top: 45px;
+    padding-left: 15%;
+    text-align: left;
+    list-style: none;
+}
+
+.koumoku{
+    list-style: none;
+}
+
+/*クリックしたら表示*/
+#drawer_input:checked ~ .content{
+    display:block;
+    right: 0;
+    transition: .5s;
+}
+
+.zentaiBOX{
+    padding-left: 30px;
+    padding-bottom: 50px;
+    margin: 2em 0;
+    background: #fffeec;
+    box-shadow: 0px 0px 0px 10px #fffeec;
+    border: dashed 10px #9fef36;
+}

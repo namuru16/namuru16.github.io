@@ -82,12 +82,23 @@ img{
     background-repeat: no-repeat;
 }
 
-@media screen and (max-width:768px){
- h1{
-    font-size: 1.5rem;
+@media screen and (max-width: 767px) {
+    /* スクロールを通常に戻す */
+    body.ms-responsive,
+    body.ms-responsive #multiscroll {
+        height: auto !important;
+        overflow: auto !important;
     }
-}
-
-body.appear h1{
-    opacity: 1;
+    /* 左右の分割を解除して縦並びにする */
+    body.ms-responsive .ms-left,
+    body.ms-responsive .ms-right {
+        width: 100% !important;
+        position: relative !important;
+        transform: none !important;
+    }
+    /* 各セクションの高さを自由にする */
+    body.ms-responsive .ms-section {
+        height: auto !important;
+        min-height: 100vh;
+    }
 }

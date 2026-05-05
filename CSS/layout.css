@@ -83,29 +83,33 @@ img{
 }
 
 @media screen and (max-width: 767px) {
-    html.ms-responsive,
-    body.ms-responsive,
-    body.ms-responsive #multiscroll {
+    /* HTML・Bodyの固定を完全に解除 */
+    html, body {
         height: auto !important;
-		min-height: 100% !important;
         overflow: visible !important;
-		position:relative !important;
+        position: relative !important;
     }
-    /* 左右の分割を解除して縦並びにする */
-    body.ms-responsive .ms-left,
-    body.ms-responsive .ms-right {
+
+    #multiscroll {
+        height: auto !important;
+        overflow: visible !important;
+        position: relative !important;
+    }
+
+    /* 左右の要素を縦並びに展開 */
+    .ms-left, .ms-right {
         width: 100% !important;
         position: relative !important;
-		top: auto !important;
-        left: auto !important;
+        top: 0 !important;
         transform: none !important;
-		float: none !important;
+        float: none !important;
     }
-    /* 各セクションの高さを自由にする */
-    body.ms-responsive .ms-section {
+
+    /* セクションの高さを自動（コンテンツに応じた高さ）に */
+    .ms-section {
         height: auto !important;
-        min-height: 100vh !important;
-		position: relative !important;
+        min-height: 100vh; /* 各セクションを最低画面いっぱいの高さにする */
+        position: relative !important;
         display: block !important;
     }
 }

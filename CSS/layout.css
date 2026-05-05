@@ -96,3 +96,57 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* スマホ用縦並び */
+@media screen and (max-width: 768px) {
+    /* 1. 全体のスクロールを通常に戻す */
+    html, body {
+        overflow: auto !important;
+        height: auto !important;
+    }
+    
+    #multiscroll {
+        height: auto !important;
+    }
+
+    .ms-section {
+        display: flex !important;
+        flex-direction: column !important; /* 縦並びを指示 */
+        height: auto !important;
+        min-height: 100vh !important;
+        position: relative !important;
+    }
+
+    /* 3. PC用の左右コンテナを100%幅に解除 */
+    .ms-left, .ms-right {
+        width: 100% !important;
+        position: relative !important;
+        float: none !important;
+        top: auto !important;
+        transform: none !important;
+    }
+        order: 1 !important; /* 1番目（上）に表示 */
+        height: 400px !important; /* スマホ時の画像エリアの高さ */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .ms-left {
+        order: 2 !important; 
+        padding: 60px 20px; 
+    }
+
+    #left1, #left2, #left3, #left4 {
+        background-color: #563a3a;
+    }
+
+    /* 5. テキストの位置決めをリセット */
+    .tyuuou {
+        position: static !important;
+        transform: none !important;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+

@@ -6,16 +6,14 @@ window.addEventListener('load', function(){
             loader.classList.add('loaded');
         }
 
-        // 2. 縦画面・横画面どちらでも常に multiscroll を起動
+        // 2. multiscroll を初期化する
         $('#multiscroll').multiscroll({
             licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
             verticalCentered: true,
-            scrollingSpeed: 1200,   // スクロール速度を少し遅くして「一気に進む」バグを防ぐ
-            touchSensitivity: 80,   // 感度を大幅に下げ、スマホの慣性スクロールを防止
+            scrollingSpeed: 1000,
+            touchSensitivity: 80, // スワイプの誤検知を防ぐ
             easing: 'easeInQuart',
-            css3: true,             // 3D描画を有効化して表示を安定させる
-            responsiveWidth: 0,     // スマホでも解除しない
-            responsiveHeight: 0     // スマホでも解除しない
+            css3: true
         });
 
     }, 3000); 

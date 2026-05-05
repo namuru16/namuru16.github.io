@@ -11,7 +11,9 @@ $(document).ready(function() {
 	$('#multiscroll').multiscroll({
 		licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
 		verticalCentered: true,
-		touchSensitivity: 40,
-		easing: 'easeInQuart' // 1つにまとめました
+		scrollingSpeed: 1000,
+		touchSensitivity: 50,
+		easing: 'easeInQuart' 
+		css3: true
 	});
 });

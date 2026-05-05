@@ -1,137 +1,109 @@
 @charset "utf-8";
 
-body{
-    text-transform: uppercase;/*アルファベットは大文字に*/
-    letter-spacing: normal;/*文字間隔*/
-    font-family: 'Mv Boli';
-	color: #f1efdb;
-    background-color: #f1efdb;
-	line-height:1.8;
-    -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;/*上と二つで文字ぼやけ防止*/
-	-webkit-text-size-adjust: 100%; /*文字でか防止*/
-	word-wrap: break-word;/*自動改行*/
-}
-
-a{
-	text-decoration: none;
-    outline: none;/*リンク下線部*/
-}
-
-.tyuuou{
-    position: absolute;
-    width: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-img{
-    max-width:100%;
-    height: auto;
-}
-
-.ms-section{
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-#left1{
-    background-color: #563a3a;
-}
-
-#left2{
-    background-color: #563a3a;
-}
-
-#left3{
-    background-color: #563a3a;
-}
-
-#left4{
-    background-color: #563a3a;
-}
-
-#right1{
-    background-image: url("../pictures/index-top.png");
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#right2{
-    background-image: url("../pictures/index-english.png");
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#right3{
-    background-image: url("../pictures/index-kobun.png");
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-#right4{
-    background-image: url("../pictures/index-ganbare.png");
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 /* ===================================================
-   PC・スマホ共通：表示崩れ・非表示バグを解消
+   1. ベース設定
 =================================================== */
-
-/* 1. ページ全体のはみ出しによる非表示バグを防ぎ、領域を確保 */
 html, body {
     margin: 0;
     padding: 0;
+    width: 100% !important;
     height: 100% !important;
     min-height: 100% !important;
-    width: 100% !important;
-    overflow: hidden !important; /* スクロールバーによるカクつきを防止 */
+    overflow: hidden !important; /* スクロールバーの干渉を防止 */
 }
 
+body {
+    text-transform: uppercase;
+    letter-spacing: normal;
+    font-family: 'Mv Boli';
+    color: #f1efdb;
+    background-color: #f1efdb;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    word-wrap: break-word;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===================================================
+   2. multiscroll 領域の最適化（スマホ・PC共通）
+=================================================== */
 #multiscroll {
-    height: 100% !important;
     width: 100% !important;
+    height: 100% !important;
     position: relative !important;
     display: block !important;
+    visibility: visible !important;
 }
 
-/* 2. 左右のスライド要素が画面外に消えないようにする */
-.ms-section, .ms-left, .ms-right {
+.ms-section {
+    position: relative;
+    width: 100%;
     height: 100% !important;
-    min-height: 100% !important;
+}
+
+/* 左右スライドコンテナの表示を保証し、はみ出し（overflow）を隠す */
+.ms-left, .ms-right {
+    height: 100% !important;
     position: absolute !important;
     top: 0 !important;
-    visibility: visible !important; /* 確実に表示させる */
+    visibility: visible !important;
     opacity: 1 !important;
+    overflow: hidden !important;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
-/* 3. 画像がスマホでもきれいに中央に収まるように調整 */
+/* 中央配置要素の設定（絶対配置のズレを修正） */
+.tyuuou {
+    position: absolute !important;
+    width: 90% !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    text-align: center !important;
+    z-index: 10 !important;
+}
+
+/* ===================================================
+   3. 各ページの背景色・背景画像の設定
+=================================================== */
+#left1, #left2, #left3, #left4 {
+    background-color: #563a3a;
+}
+
+/* 背景画像を画面全体に美しく収める */
 #right1, #right2, #right3, #right4 {
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-/* 4. テキストの位置（中央揃え）を確実に適用する */
-.tyuuou {
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 90% !important;
-    text-align: center !important;
-    z-index: 10 !important;
+#right1 {
+    background-image: url("../pictures/index-top.png");
+}
+
+#right2 {
+    background-image: url("../pictures/index-english.png");
+}
+
+#right3 {
+    background-image: url("../pictures/index-kobun.png");
+}
+
+#right4 {
+    background-image: url("../pictures/index-ganbare.png");
 }
 

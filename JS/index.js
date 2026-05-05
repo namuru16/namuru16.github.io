@@ -20,5 +20,5 @@ $('#multiscroll').multiscroll({
 	verticalCentered: true,
 	responsiveWidth: 768,
 	responsiveExpand: true,
-	touchSensitivity: 15
+	touchSensitivity: 30
 });

@@ -12,6 +12,7 @@ $(document).ready(function() {
 	$('#multiscroll').multiscroll({
 		easing:'easeInQuart'
 });
+});
 
 $('#multiscroll').multiscroll({
 	licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',

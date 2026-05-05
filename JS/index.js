@@ -12,8 +12,7 @@ window.addEventListener('load', function(){
             verticalCentered: true,
             scrollingSpeed: 1000,
             touchSensitivity: 80, // スワイプの誤検知を防ぐ
-            easing: 'easeInQuart',
-            css3: true
+            easing: 'easeInQuart'
         });
 
     }, 3000); 

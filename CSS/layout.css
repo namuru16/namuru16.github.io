@@ -81,35 +81,3 @@ img{
     background-position: center;
     background-repeat: no-repeat;
 }
-
-@media screen and (max-width: 767px) {
-    /* HTML・Bodyの固定を完全に解除 */
-    html, body {
-        height: auto !important;
-        overflow: visible !important;
-        position: relative !important;
-    }
-
-    #multiscroll {
-        height: auto !important;
-        overflow: visible !important;
-        position: relative !important;
-    }
-
-    /* 左右の要素を縦並びに展開 */
-    .ms-left, .ms-right {
-        width: 100% !important;
-        position: relative !important;
-        top: 0 !important;
-        transform: none !important;
-        float: none !important;
-    }
-
-    /* セクションの高さを自動（コンテンツに応じた高さ）に */
-    .ms-section {
-        height: auto !important;
-        min-height: 100vh; /* 各セクションを最低画面いっぱいの高さにする */
-        position: relative !important;
-        display: block !important;
-    }
-}

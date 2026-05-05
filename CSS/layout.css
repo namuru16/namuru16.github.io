@@ -32,21 +32,6 @@ img{
     height: auto;
 }
 
-/* スクロール先の表示（描画）が消えてしまうバグを修正 */
-.ms-section, .ms-left, .ms-right {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-
-/* 予期せぬスクロールバーの発生を抑える */
-body, html {
-    margin: 0;
-    padding: 0;
-}
-
-
 .ms-section{
     position: relative;
     width: 100%;
@@ -97,8 +82,26 @@ body, html {
     background-repeat: no-repeat;
 }
 
-/* 画面全体での余計なバウンスやスクロール連動を抑える */
-html, body {
-    overscroll-behavior-y: none; /* 上下の引っ張りバウンスを禁止 */
-    -webkit-overflow-scrolling: auto;
-}
+window.addEventListener('load', function(){
+    setTimeout(function(){
+        // 1. ローディング画面を非表示にする
+        const loader = document.getElementById('Loading');
+        if (loader) {
+            loader.classList.add('loaded');
+        }
+
+        // 2. ローディングが消えた瞬間に multiscroll を初期化する
+        $('#multiscroll').multiscroll({
+            licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
+            verticalCentered: true,
+            scrollingSpeed: 1000,
+            touchSensitivity: 35,
+            easing: 'easeInQuart',
+            css3: true,
+            
+            // 【重要】スマホサイズ(768px以下)では左右分割スクロールを無効化する
+            responsiveWidth: 768
+        });
+
+    }, 3000); 
+});

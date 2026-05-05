@@ -32,14 +32,18 @@ img{
     height: auto;
 }
 
-html, body {
-    overflow: hidden;
-    height: 100%;
-    touch-action: none; 
+/* スクロール先の表示（描画）が消えてしまうバグを修正 */
+.ms-section, .ms-left, .ms-right {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-.ms-left, .ms-right {
-    overflow: hidden !important;
+/* 予期せぬスクロールバーの発生を抑える */
+body, html {
+    margin: 0;
+    padding: 0;
 }
 
 

@@ -17,5 +17,7 @@ $(document).ready(function() {
 
 $('#multiscroll').multiscroll({
 	licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
-	verticalCentered: true
+	verticalCentered: true,
+	responsiveWidth: 768,
+	responsiveExpand: true
 });

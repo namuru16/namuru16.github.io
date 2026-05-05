@@ -32,6 +32,17 @@ img{
     height: auto;
 }
 
+html, body {
+    overflow: hidden;
+    height: 100%;
+    touch-action: none; 
+}
+
+.ms-left, .ms-right {
+    overflow: hidden !important;
+}
+
+
 .ms-section{
     position: relative;
     width: 100%;

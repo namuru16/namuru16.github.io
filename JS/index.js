@@ -9,10 +9,14 @@ window.addEventListener('load', function(){
 });
 
 $(document).ready(function() {
+	if ($(window).width() >=768){
 	$('#multiscroll').multiscroll({
 		responseWidth: 768,
 		easing:'easeInQuart'
 	});
+	}else{
+		$('body').addClass('ms-responsive');
+	}
 });
 
 $('#multiscroll').multiscroll({

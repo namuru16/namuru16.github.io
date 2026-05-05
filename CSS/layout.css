@@ -91,26 +91,3 @@ img{
 body.appear h1{
     opacity: 1;
 }
-
-
-
-/*縦画面やってみる*/
-
-
-@media screen and (max-width: 768px) and (orientation: portrait){
-    /*全幅にして縦ならべ*/
-    .ms-left, .ms-right{
-        width: 100% o !important;
-        float: none !important;
-    }
-
-    /*右を左の下へ*/
-    .ms-left{
-        bottom: 0px;
-    }
-
-    .ms-section{
-        height: auto !important;
-        min-height: 50vh;
-    }
-}

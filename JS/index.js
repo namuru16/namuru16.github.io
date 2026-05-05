@@ -12,7 +12,7 @@ window.addEventListener('load', function(){
             licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
             verticalCentered: true,
             scrollingSpeed: 1000,
-            touchSensitivity: 65,
+            touchSensitivity: 35,
             easing: 'easeInQuart',
             css3: true,            
             

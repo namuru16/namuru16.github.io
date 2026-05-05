@@ -1,27 +1,24 @@
 @charset "utf-8";
 
-/* ===================================================
-   ベース設定
-=================================================== */
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
-    overflow: hidden; /* スクロールバーによるバグを防止 */
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
     text-transform: uppercase;
-    letter-spacing: normal;
+    letter-spacing: normal; 
     font-family: 'Mv Boli';
     color: #f1efdb;
     background-color: #f1efdb;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
-    word-wrap: break-word;
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-text-size-adjust: 100%; /* 文字サイズ自動拡大防止 */
+    word-wrap: break-word; 
 }
 
 a {
@@ -34,15 +31,12 @@ img {
     height: auto;
 }
 
-/* ===================================================
-   multiscroll（左右分割）の表示保証とズレ対策
-=================================================== */
+
 #multiscroll {
-    height: 100%;
     width: 100%;
+    height: 100%;
 }
 
-/* プラグインの座標移動を邪魔しないように、position: absolute!important は記述しない */
 .ms-section {
     width: 100%;
     height: 100%;
@@ -56,7 +50,6 @@ img {
     backface-visibility: hidden;
 }
 
-/* 中央配置要素の設定 */
 .tyuuou {
     position: absolute;
     width: 90%;
@@ -67,14 +60,10 @@ img {
     z-index: 10;
 }
 
-/* ===================================================
-   各ページの背景色・背景画像の設定
-=================================================== */
 #left1, #left2, #left3, #left4 {
     background-color: #563a3a;
 }
 
-/* 画像を画面いっぱいにカバー表示 */
 #right1, #right2, #right3, #right4 {
     background-size: cover;
     background-position: center;
@@ -84,12 +73,15 @@ img {
 #right1 {
     background-image: url("../pictures/index-top.png");
 }
+
 #right2 {
     background-image: url("../pictures/index-english.png");
 }
+
 #right3 {
     background-image: url("../pictures/index-kobun.png");
 }
+
 #right4 {
     background-image: url("../pictures/index-ganbare.png");
 }

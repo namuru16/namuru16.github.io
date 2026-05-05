@@ -97,62 +97,55 @@ body, html {
     background-repeat: no-repeat;
 }
 
-/* スマホ用縦並び*/
+/* ===================================================
+   スマホ（画面幅768px以下）用の縦並びレイアウト
+=================================================== */
 @media screen and (max-width: 768px) {
+    /* multiscroll特有の固定高さを解除し、縦スクロールできるようにする */
     html, body {
         overflow: auto !important;
         height: auto !important;
-        position: relative !important;
     }
     
     #multiscroll {
         height: auto !important;
-        position: relative !important;
     }
 
-    /* 2. 各セクション（左右の親要素）の絶対配置を解除 */
-    .ms-section {
-        height: auto !important;
-        position: relative !important;
-        top: auto !important;
-        display: block !important; /* flexから通常配置に変更し、崩れを防ぐ */
-    }
-
-    /* 3. 左側の文章、右側の画像を100%幅にし、通常の縦並びにする */
+    /* 1. PC用の左右分割コンテナ（ms-left, ms-right）を解除 */
     .ms-left, .ms-right {
         width: 100% !important;
         position: relative !important;
         float: none !important;
         top: auto !important;
-        left: auto !important;
-        right: auto !important;
         transform: none !important;
-        height: auto !important;
     }
- 
-    .ms-right {
-        display: block !important;
-        height: 350px !important; /* スマホ時の画像エリアの高さ */
+
+    /* 2. セクション全体の高さも、コンテンツに合わせて自動調節にする */
+    .ms-section {
+        height: auto !important;
+        min-height: 50vh; /* 各ブロックを画面の半分くらいの高さで確保 */
+        position: relative !important;
+    }
+
+    /* 3. 左側の文章（背景色：茶色）と、右側の画像（背景画像）の表示設定 */
+    #left1, #left2, #left3, #left4 {
+        background-color: #563a3a;
+        padding: 50px 20px; /* 上下に余白を作って縦並びを見やすく */
+    }
+
+    #right1, #right2, #right3, #right4 {
+        height: 300px !important; /* スマホ時の画像エリアの高さを指定 */
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
     }
 
-    .ms-left {
-        display: block !important;
-        padding: 50px 20px !important;
-    }
-	
-    #left1, #left2, #left3, #left4 {
-        background-color: #563a3a !important;
-    }
-
+    /* 4. テキストの位置決め（tyuuou）をスマホ用に調整 */
     .tyuuou {
         position: static !important;
         transform: none !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        text-align: center !important;
+        width: 100%;
+        margin: 0 auto;
     }
 }
+

@@ -1,15 +1,14 @@
 @charset "utf-8";
 
 /* ===================================================
-   1. ベース設定
+   ベース設定
 =================================================== */
 html, body {
     margin: 0;
     padding: 0;
-    width: 100% !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    overflow: hidden !important; /* スクロールバーの干渉を防止 */
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* スクロールバーによるバグを防止 */
 }
 
 body {
@@ -36,74 +35,61 @@ img {
 }
 
 /* ===================================================
-   2. multiscroll 領域の最適化（スマホ・PC共通）
+   multiscroll（左右分割）の表示保証とズレ対策
 =================================================== */
 #multiscroll {
-    width: 100% !important;
-    height: 100% !important;
-    position: relative !important;
-    display: block !important;
-    visibility: visible !important;
-}
-
-.ms-section {
-    position: relative;
+    height: 100%;
     width: 100%;
-    height: 100% !important;
 }
 
-/* 左右スライドコンテナの表示を保証し、はみ出し（overflow）を隠す */
+/* プラグインの座標移動を邪魔しないように、position: absolute!important は記述しない */
+.ms-section {
+    width: 100%;
+    height: 100%;
+}
+
 .ms-left, .ms-right {
-    height: 100% !important;
-    position: absolute !important;
-    top: 0 !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    overflow: hidden !important;
+    height: 100%;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
-/* 中央配置要素の設定（絶対配置のズレを修正） */
+/* 中央配置要素の設定 */
 .tyuuou {
-    position: absolute !important;
-    width: 90% !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    text-align: center !important;
-    z-index: 10 !important;
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
 }
 
 /* ===================================================
-   3. 各ページの背景色・背景画像の設定
+   各ページの背景色・背景画像の設定
 =================================================== */
 #left1, #left2, #left3, #left4 {
     background-color: #563a3a;
 }
 
-/* 背景画像を画面全体に美しく収める */
+/* 画像を画面いっぱいにカバー表示 */
 #right1, #right2, #right3, #right4 {
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #right1 {
     background-image: url("../pictures/index-top.png");
 }
-
 #right2 {
     background-image: url("../pictures/index-english.png");
 }
-
 #right3 {
     background-image: url("../pictures/index-kobun.png");
 }
-
 #right4 {
     background-image: url("../pictures/index-ganbare.png");
 }
-

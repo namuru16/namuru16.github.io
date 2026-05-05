@@ -15,7 +15,7 @@ window.addEventListener('load', function(){
             touchSensitivity: 35,
             easing: 'easeInQuart',
             css3: true,            
-            
+            responsiveWidth: 768
         });
 
     }, 3000); 

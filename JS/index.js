@@ -6,17 +6,20 @@ window.addEventListener('load', function(){
             loader.classList.add('loaded');
         }
 
-        // 2. 画面サイズ判定 (768pxより大きいPCのみmultiscrollを起動)
-        if (window.innerWidth > 768) {
-            $('#multiscroll').multiscroll({
-                licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
-                verticalCentered: true,
-                scrollingSpeed: 1200,   // スクロール速度を遅くして「一気に進む」バグを防ぐ
-                touchSensitivity: 80,   // 感度を大幅に下げて、慣性スクロールの誤動作を防止
-                easing: 'easeInQuart',
-                css3: true              // 3D描画を有効化
-            });
-        }
+        // 2. 画面サイズに関係なく multiscroll を起動
+        $('#multiscroll').multiscroll({
+            licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
+            verticalCentered: true,
+            scrollingSpeed: 1000,
+            touchSensitivity: 75,  // スワイプ判定を鈍くし、2ページ進むバグを抑制
+            easing: 'easeInQuart',
+            css3: true,
+            
+            // 縦でも横でも常に multiscroll を有効にするためレスポンシブ制限を解除
+            responsiveWidth: 0,
+            responsiveHeight: 0
+        });
 
-    }, 3000); // 3秒後に発火
+    }, 3000); 
 });
+

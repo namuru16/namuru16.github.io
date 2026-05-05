@@ -1,0 +1,130 @@
+@charset"utf-8";
+body{
+    background-color: #f1efdb;
+    color: #563a3a;
+}
+
+.gamenChange{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #563a3a;
+    pointer-events: none;
+    z-index: 10000;
+    animation: fadeOut 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.1s;
+}
+
+
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+        visibility: visible;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.zentaibox{
+    padding: 20px;
+}
+
+.futi{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:10px solid #563a3a;
+    box-sizing: border-box;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    color:#3f6333;
+}
+
+.mokuzi{
+    color:rgb(95, 155, 124);
+    list-style: none;
+}
+
+.EX{
+    color:#144b41;
+    text-align: left;
+    margin-top: 10px;
+}
+
+ul{
+    text-align: left;
+}
+
+
+/*横スク*/
+
+.yokosuku{
+    width:100%;
+    overflow-x: auto;
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+}
+
+.yokosuku::-webkit-scrollbar{
+    height: 6px;
+}
+
+.yokosuku::-webkit-scrollbar-track{
+    background:#f1efdb;
+    border-radius: 10px;
+}
+
+.yokosuku::-webkit-scrollbar-thumb{
+    background: #c0bc9b;
+    border-radius: 10px;
+}
+
+.yokosuku-box{
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    align-items: stretch;
+}
+
+.card{
+    display: flex;
+    flex: 0 0 70vw;
+    height: auto;
+    padding: 30px;
+    background-color:#f1efdb;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 18px;
+    border: 3px solid #c0bc9b;
+    scroll-snap-align: start;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+    box-sizing: border-box;
+}
+
+.card.hidari{
+    text-align: left;
+}
+
+.gazou{
+    pointer-events: none;
+    -webkit-user-drag: none;
+}

@@ -82,26 +82,56 @@ img{
     background-repeat: no-repeat;
 }
 
-window.addEventListener('load', function(){
-    setTimeout(function(){
-        // 1. ローディング画面を非表示にする
-        const loader = document.getElementById('Loading');
-        if (loader) {
-            loader.classList.add('loaded');
-        }
+/* ===================================================
+   PC・スマホ共通：表示崩れ・非表示バグを解消
+=================================================== */
 
-        // 2. ローディングが消えた瞬間に multiscroll を初期化する
-        $('#multiscroll').multiscroll({
-            licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
-            verticalCentered: true,
-            scrollingSpeed: 1000,
-            touchSensitivity: 35,
-            easing: 'easeInQuart',
-            css3: true,
-            
-            // 【重要】スマホサイズ(768px以下)では左右分割スクロールを無効化する
-            responsiveWidth: 768
-        });
+/* 1. ページ全体のはみ出しによる非表示バグを防ぎ、領域を確保 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100% !important;
+    min-height: 100% !important;
+    width: 100% !important;
+    overflow: hidden !important; /* スクロールバーによるカクつきを防止 */
+}
 
-    }, 3000); 
-});
+#multiscroll {
+    height: 100% !important;
+    width: 100% !important;
+    position: relative !important;
+    display: block !important;
+}
+
+/* 2. 左右のスライド要素が画面外に消えないようにする */
+.ms-section, .ms-left, .ms-right {
+    height: 100% !important;
+    min-height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    visibility: visible !important; /* 確実に表示させる */
+    opacity: 1 !important;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* 3. 画像がスマホでもきれいに中央に収まるように調整 */
+#right1, #right2, #right3, #right4 {
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 4. テキストの位置（中央揃え）を確実に適用する */
+.tyuuou {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    text-align: center !important;
+    z-index: 10 !important;
+}
+

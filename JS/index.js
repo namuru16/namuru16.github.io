@@ -4,7 +4,7 @@ window.addEventListener('load', function(){
         licenseKey: 'OPEN-SOURCE-GPLv3-LICENSE',
         verticalCentered: true,
         scrollingSpeed: 1000,
-        touchSensitivity: 80,
+        touchSensitivity: 35,
         easing: 'easeInQuart'
     });
 
